@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="News.css">
+    <title>Document</title>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-content">
+      <div class="logo">
+        <img src="ChatGPT Image 8 avr. 2025, 10_17_45.png" alt="MS3OUD Logo" />
+      </div>
+      <nav class="nav-center">
+        <a href="https://ms3oud-afk.github.io/MS3OUD./">Home</a>
+      </nav>
+      <div class="search-box">
+        <input type="text" id="searchInput" onkeyup="filterCards()" placeholder="Search..." />
+      </div>
+    </div>
+  </header>
+  
+  <div class="cards-container">
+    <div class="card">
+      <img src="téléchargement.jpg" alt="">
+      <h3>K'</h3>
+      <p>This card play a K' emote sound.</p>
+      <button onclick="playSound('sound1')">Play</button>
+      <audio id="sound1" src="Free Intro Gusion Kdash KOF Emote Emoji 🤓 Mobile legend.mp3"></audio>
+    </div>
+  
+    <div class="card">
+      <img src="images (1).jpg" alt="">
+      <h3>LOL</h3>
+      <p>Still no sound.</p>
+      <button onclick="playSound('sound2')">Play</button>
+      <audio id="sound2" src="sounds/dog.mp3"></audio>
+    </div>
+  
+    <div class="card">
+      <img src="images.jpg" alt="">
+      <h3>You broke my heart</h3>
+      <p>Still no sound.</p>
+      <button onclick="playSound('sound3')">Play</button>
+      <audio id="sound3" src="sounds/bird.mp3"></audio>
+    </div>
+  </div>
+  <script>
+    function playSound(id) {
+      const sound = document.getElementById(id);
+      sound.currentTime = 0;
+      sound.play();
+    }
+  
+    function filterCards() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const cards = document.getElementsByClassName("card");
+  
+      for (let i = 0; i < cards.length; i++) {
+        const title = cards[i].querySelector("h3").innerText.toLowerCase();
+        if (title.startsWith(input)) {
+          cards[i].style.display = "block";
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+    }
+  </script>  
+</body>
+</html>
