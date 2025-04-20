@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="News.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>News</title>
+</head>
+<body>
+  <!-- Header -->
+   <header>
+  <div class="navbar">
+    <div class="logo" ><a href="https://ms3oud-afk.github.io/MS3OUD./">MS3OUD</a></div>
+    <ul class="links">
+      <li><a href="#cards">Cards</a></li>
+      <li><a href="#My_gameplay">My gameplay</a></li>
+      <li><a href="#">1V1</a></li>
+      <li><a href="#">likes</a></li>
+    </ul>
+    <a href="#" class="action_btn">Get started</a>
+    <div class="toggle_btn">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </div>
+  <div class="dropdown_menu">
+    <li><a href="#cards">Cards</a></li>
+    <li><a href="#My_gameplay">My gameplay</a></li>
+    <li><a href="#">1V1</a></li>
+    <li><a href="#">likes</a></li>
+    <li><a href="#" class="action_btn">Get started</a></li>
+  </div>
+</header>
+<section class="card-section">
+  <div class="card-grid">
+    
+  </div>
+</section>
+<section class="card-section" id="cards">
+  <div class="card-header">
+    <h2>Cards</h2>
+  </div>
+  <div class="card-grid">
+    <!-- your cards -->
+  </div>
+</section>
+
+<div class="card-grid">
+  <div class="sound-card">
+    <img src="images (1).jpg" alt="">
+    <p>Relax with the sound of waves.</p>
+    <button data-sound="">Play</button>
+  </div>
+  <div class="sound-card">
+    <img src="images.jpg" alt="">
+    <p>Calm your mind with rain.</p>
+    <button data-sound="">Play</button>
+  </div>
+  <div class="sound-card">
+    <img src="téléchargement.jpg" alt="">
+    <p>Nature’s music to refresh you.</p>
+    <button data-sound="">Play</button>
+  </div>
+</div>
+<div class="card-header" id="My_gameplay">
+  <h2>My gameplay</h2>
+</div>
+  
+<script>
+  const toggleBtn = document.querySelector('.toggle_btn')
+  const toggleBtnIcon = document.querySelector('.toggle_btn i')
+  const dropDownMenu = document.querySelector('.dropdown_menu')
+
+  toggleBtn.onclick = function () {
+    dropDownMenu.classList.toggle('open')
+
+    const isOpen = dropDownMenu.classList.contains('open')
+
+    toggleBtnIcon.className = isOpen
+      ? 'fa-solid fa-xmark'
+      : 'fa-solid fa-bars'
+  }
+    // Sound play logic for all buttons
+    const soundButtons = document.querySelectorAll('.sound-card button')
+
+soundButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const audio = new Audio(button.dataset.sound)
+    audio.play()
+  })
+})
+</script>
+
+
+</body>
+</html>
